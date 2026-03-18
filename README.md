@@ -88,11 +88,12 @@ Irish Imports ~ 458
 
 # Notes on Output and Model Performance
 
-     XGBoost model National Grid
-MAE         17.002        10.837
-RMSE        22.467         15.28
-R²           0.869         0.952
-MAPE        11.47%        7.944%
+| Metric | XGBoost Model | National Grid |
+|--------|--------------|---------------|
+| MAE    | 17.002       | 10.837        |
+| RMSE   | 22.467       | 15.28         |
+| R²     | 0.869        | 0.952         |
+| MAPE   | 11.47%       | 7.944%        |
 
 * Our model has a higher MAE, RMSE, MAPE and lower R² compared to the National Grid model and this was expected.
 * The provided dataset only had forecasted demand, wind and solar. This limits the models ability in a few ways:
