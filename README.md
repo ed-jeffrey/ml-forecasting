@@ -100,3 +100,5 @@ Irish Imports ~ 458
 - There is a wealth of actual and forecasted data from NESO for the different fuel types listed above, such as nuclear, oil, etc which is missing from our training data. For our purposes, we approximated the residual demand as non-renewable energy sources however this introduces uncertainty into the model. This approximate non-renewable amount can be innacurate if nuclear energy production increases and covers a percentage of the demand -> and this wouldn't be captured in our "residual demand" figure. At the moment, this would be accounted for as a "non-renewable" source. 
 - In addition to this, NESO most likely uses real (actual) past data for forecasting, whilst we only have day-off forecasts for past data. This introduces uncertainty because the day-off forecasts are not ground truth and are inherently erroneous.
 * The way we are handling NaNs can be improved, dropping ~13% of the training data is not ideal.
+* The author ran out of time to properly conduct hyperparameter tuning for the model training.
+* There was a lot more the author wanted to do for data exploration, model output analysis, but unfortunately ran out of time!
