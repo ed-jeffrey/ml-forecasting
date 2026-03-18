@@ -68,19 +68,18 @@ ml-forecasting/
 # Carbon Intensity Calculation Background
 The GB carbon intensity 𝐶𝑡 at time 𝑡 is found by weighting the carbon intensity 𝑐𝑔 for fuel type 𝑔 by the generation 𝑃𝑔,𝑡 of that fuel type. This is then divided by national demand 𝐷𝑡 to give the carbon intensity for GB (https://carbonintensity.org.uk/). Here, we are using a dataset with only solar and wind sources.
 
-Fuel Type Carbon Intensity
-gCO2/kWh
-Biomass 120
-Coal 937
-Gas (Combined Cycle) 394
-Gas (Open Cycle) 651
-Hydro 0
-Nuclear 0
-Oil 935
-Other 300
-Solar 0
-Wind 0
-Pumped Storage 0
+Fuel Type Carbon Intensity (gCO2/kWh)
+Biomass: 120
+Coal: 937
+Gas (Combined Cycle): 394
+Gas (Open Cycle): 651
+Hydro: 0
+Nuclear: 0
+Oil: 935
+Other: 300
+Solar: 0
+Wind: 0
+Pumped Storage: 0
 French Imports ~ 53
 Dutch Imports ~ 474
 Belgium Imports ~ 179
@@ -88,3 +87,15 @@ Irish Imports ~ 458
 (https://carbonintensity.org.uk/)
 
 # Notes on Output and Model Performance
+
+     XGBoost model National Grid
+MAE         17.002        10.837
+RMSE        22.467         15.28
+R²           0.869         0.952
+MAPE        11.47%        7.944%
+
+* Our model has a higher MAE, RMSE, MAPE and lower R² compared to the National Grid model and this was expected.
+* The provided dataset only had forecasted demand, wind and solar. This limits the models ability in a few ways:
+- There is a wealth of actual and forecasted data from NESO for the different fuel types listed above, such as nuclear, oil, etc which is missing from our training data. For our purposes, we approximated the residual demand as non-renewable energy sources however this introduces uncertainty into the model. This approximate non-renewable amount can be innacurate if nuclear energy production increases and covers a percentage of the demand -> and this wouldn't be captured in our "residual demand" figure. At the moment, this would be accounted for as a "non-renewable" source. 
+- In addition to this, NESO most likely uses real (actual) past data for forecasting, whilst we only have day-off forecasts for past data. This introduces uncertainty because the day-off forecasts are not ground truth and are inherently erroneous.
+* The way we are handling NaNs can be improved, dropping ~13% of the training data is not ideal.
