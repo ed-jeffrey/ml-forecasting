@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "ml-task"
+name = "ml-forecasting"
 version = "0.1.0"
 description = "Machine learning forecasting task"
 authors = ["Ed Jeffrey <edjeffrey05@hotmail.com>"]
@@ -16,9 +16,15 @@ folium = "^0.20.0"
 geopandas = "^1.1.1"
 matplotlib = "^3.10.6"
 tqdm = "^4.67.1"
+seaborn = "^0.13.2"
+xgboost = "^3.2.0"
+pyarrow = "^23.0.1"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4"
+
+[tool.black]
+line-length = 120
 
 [build-system]
 requires = ["poetry-core"]
