@@ -16,10 +16,10 @@ This project trains an XGBoost model to forecast carbon intensity up to 24 hours
 
 #### FORECASTS
 - 'carbon_intensity_forecast' - the forecasted carbon intensity in gCO2/kWh (only to be used for model output comparison)
-- 'demand' - the day-ahead (24hr out) demand forecast on the energy grid for this 30-minute window (how much energy is necessary to meet the countries energy needs) in kWh
-- 'Solar' - the day-ahead (24hr out) forecast of solar energy production in meeting the demand in this 30-minute window in kWh 
-- 'Wind Offshore' - the day-ahead (24hr out) forecast for offshore wind energy production in meeting the demand in this 30-minute window in kWh
-- 'Wind Onshore' - the day-ahead (24hr out) forecast for onshore wind energy production in meeting the demand in this 30-minute window in kWh
+- 'demand' - the day-ahead (24hr out) demand forecast on the energy grid for this 30-minute window (how much energy is necessary to meet the countries energy needs) in MW
+- 'Solar' - the day-ahead (24hr out) forecast of solar energy production in meeting the demand in this 30-minute window in MW
+- 'Wind Offshore' - the day-ahead (24hr out) forecast for offshore wind energy production in meeting the demand in this 30-minute window in MW
+- 'Wind Onshore' - the day-ahead (24hr out) forecast for onshore wind energy production in meeting the demand in this 30-minute window in MW
 
 Data sources:
 - [1-Day Ahead Demand Forecast](https://www.neso.energy/data-portal/1-day-ahead-demand-forecast)
