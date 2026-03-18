@@ -43,15 +43,12 @@ Data sources:
 * We also drop any rows with NaNs in any column - this is particularly high (13.4%) as we have rolling averages for past data, and the dataset has periods with NaNs. 
 
 # Installation & Running
+The author is running the repo locally in a Poetry environment on VS Code.
 
 ```bash
 # Install dependencies
 make bootstrap
-
-# Launch Jupyter
-poetry run jupyter notebook
 ```
-
 
 # Repo Structure
 
