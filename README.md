@@ -90,12 +90,13 @@ Irish Imports ~ 458
 
 | Metric | XGBoost Model | National Grid |
 |--------|--------------|---------------|
-| MAE    | 17.002       | 10.837        |
-| RMSE   | 22.467       | 15.28         |
+| MAE    | 17.054       | 10.837        |
+| MSE    | 505.841      | 233.470       |
+| RMSE   | 21.959       | 15.280        |
+| MAPE   | 11.500%      | 7.900%        |
 | R²     | 0.869        | 0.952         |
-| MAPE   | 11.47%       | 7.944%        |
 
-* Our model has a higher MAE, RMSE, MAPE and lower R² compared to the National Grid model and this was expected.
+* Our model has a higher MAE, MSE, RMSE, MAPE and lower R² compared to the National Grid model and this was expected.
 * The provided dataset only had forecasted demand, wind and solar. This limits the models ability in a few ways:
 - There is a wealth of actual and forecasted data from NESO for the different fuel types listed above, such as nuclear, oil, etc which is missing from our training data. For our purposes, we approximated the residual demand as non-renewable energy sources however this introduces uncertainty into the model. This approximate non-renewable amount can be innacurate if nuclear energy production increases and covers a percentage of the demand -> and this wouldn't be captured in our "residual demand" figure. At the moment, this would be accounted for as a "non-renewable" source. 
 - In addition to this, NESO most likely uses real (actual) past data for forecasting, whilst we only have day-off forecasts for past data. This introduces uncertainty because the day-off forecasts are not ground truth and are inherently erroneous.
